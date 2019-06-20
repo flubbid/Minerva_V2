@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 # Create your views here.
+def_assoc
+#something isn't right with line 10
 def signup(request):
     error_message = ''
-    if reqeuest.method == 'POST'
+    if request.method == 'POST'
     form = UserCreationForm(request.POST)
     if form.is.valid():
         user = form.save()
