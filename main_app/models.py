@@ -1,11 +1,12 @@
+from django.db import models
 from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
 
 
-class Teacher(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    assignments = models.OneToManyField(Assignment)
+class Student(models.Model):
+    name = models.CharField(max_length=50)
+    grade = models.IntegerField(default=None)
 
 
 class Assignment(models.Model):
@@ -16,6 +17,6 @@ class Assignment(models.Model):
     students = models.ManyToManyField(Student)
 
 
-class Student(models.Model):
-    name = models.CharField(max_length=50)
-    grade = models.IntegerField(default=null)
+class Teacher(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    assignments = models.ForeignKey(Assignment, on_delete=models.CASCADE)
