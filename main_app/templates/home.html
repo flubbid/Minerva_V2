@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% block content %}
+  <body>  
+    <main>
+        <div>
+          <div class="container">
+            <div class="d-flex justify-center">
+              <h3 style="margin:30px">Please Login</h3>
+                <div class="d-flex flex-column" style="margin:20px">
+                 {% csrf_token %}
+                 {% login_view %}
+                </div>
+            </div>
+          </div>
+      </div>
+    </main>
+  </body>
+{% endblock %}
+<!--figure out how to use bootstrap to move buttons in the right place,(right) per user(prototype with student)-->

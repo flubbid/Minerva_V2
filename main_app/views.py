@@ -20,6 +20,9 @@ def signup(request):
         return render(request, 'registration/signup.html', context)
 
 @login_required 
+
+
+
 class AssCreate(CreateView):
     model = Assignment
     fields = ['title', 'description', 'due_date']
