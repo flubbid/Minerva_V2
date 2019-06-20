@@ -35,8 +35,5 @@ def ass_index(request):
     assignments = Assignment.objects.all()
     return render (request, 'assignment/index.html', 'assignments': assignments)
 
-def cats_detail(request, ass_id)
-    assignments = Assignments.objects.get(id=ass_id)
-
 def ass_detail(request, ass_id):
     ass = Assignment.objects.get(id=ass_id)
