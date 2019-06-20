@@ -1,0 +1,15 @@
+
+     {% block content%}
+    <main class="fluid-container">
+      <div>
+        <h1>New Assignment</h1> 
+        <hr>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+            {{ form.as_table }}}
+            </table>
+            <input type="submit" value="Submit" class="btn btn-primary">
+       </form>
+      </div>
+    </main>
