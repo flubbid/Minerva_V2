@@ -8,6 +8,7 @@ class Student(models.Model):
     name = models.CharField(max_length=50)
     grade = models.IntegerField(default=None)
 
+
     def __str__(self):
         return self.name
 
@@ -33,6 +34,7 @@ class Assignment(models.Model):
     description = models.TextField(max_length=250)
     due_date = models.DateField('due date')
     students = models.ManyToManyField(Student)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -43,7 +45,3 @@ class Assignment(models.Model):
     class Meta:
         ordering = ['-due_date']
 
-
-class Teacher(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    assignments = models.ForeignKey(Assignment, on_delete=models.CASCADE)

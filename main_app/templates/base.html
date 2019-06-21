@@ -17,14 +17,14 @@
         <nav class="navbar navbar-light" style="background-color: #ffe680">
             <h1 id="Minerva-Logo" class="navbar-brand" href="home/" >Minerva</h1>
             {% if user.is_authenticated %}
-            <li><a href="{% url 'stud_create' %}">Add a Student</a></li>
-            <li><a href="{% url 'stud_index' %}">View All Students</a></li>
+            <li><a href="#">Add a Student</a></li>
+            <li><a href="#">View All Students</a></li>
             <li><a href="{% url 'ass_create' %}">Add an Assignment</a></li>
-            <li><a href="{% url 'detail' %}">View All Assignments</a></li>
+            <li><a href="{% url 'ass_index' %}">View All Assignments</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a href="{% url 'login_view' %}">Log In</a></li>
             {% endif %}
         </nav>
     </header>
