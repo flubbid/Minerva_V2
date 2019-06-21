@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+from django.forms import DateTimeInput
 
 from .forms import LoginForm
 from .models import Student, Assignment
@@ -77,11 +78,12 @@ def logout_view(request):
 @login_required
 def ass_index(request):
     assignments = Assignment.objects.filter(user = request.user)
-    return render (request, 'Assignments/index.html', {'assignments': assignments})
+    return render(request, 'Assignments/index.html', {'assignments': assignments})
 
-
-def ass_detail(request, ass_id):
-    ass = Assignment.objects.get(id=ass_id)
+@login_required
+def ass_detail(request, dog_id):
+    assignments = Assignment.objects.get(id=dog_id)
+    return render(request, 'Assignments/ass_details.html', {'assignments':assignments})
 
 
 @login_required
