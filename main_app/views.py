@@ -7,7 +7,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
 from .forms import LoginForm
-from .models import Teacher, Student, Assignment
+from .models import Student, Assignment
 # Create your views here.
 
 def signup(request):
@@ -77,7 +77,7 @@ def logout_view(request):
 @login_required
 def ass_index(request):
     assignments = Assignment.objects.filter(user = request.user)
-    return render (request, 'Assignment/index.html', {'assignments': assignments})
+    return render (request, 'Assignments/index.html', {'assignments': assignments})
 
 
 def ass_detail(request, ass_id):
