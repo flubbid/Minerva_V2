@@ -38,7 +38,8 @@ class AssUpdate(UpdateView):
 
 
 class AssDelete(DeleteView):
-    model = Assignment 
+    model = Assignment
+
 
 
 def home(request):
@@ -54,8 +55,9 @@ def logout(request):
 
 
 def ass_index(request):
-    assignments = Assignment.objects.all(user = request.user)
-    return render (request, 'assignment/index.html', {'assignments': assignments})
+    assignments = Assignment.objects.all(user=request.user)
+    return render(request, 'assignment/index.html', {'assignments': assignments})
+
 
 
 def ass_detail(request, ass_id):
