@@ -1,16 +1,22 @@
-{% load static %}
+{% extends 'base.html'%}
 {% block content%}
 <main class="container">
     <table class="table table-striped">
         <thead>
-            <th scope="col2">Students</th>
-            <th scope="col5">Details</th>
+           
+            <th scope="col2">Assignment</th>
+            <th scope="col5">Category</th>
+            <th scope="col5">Due Date</th>
         </thead>
         <tbody>
+            {%for ass in assignments.all %}
             <tr>
-                <td>Student Name</td>
-                <td><a href="{ url 'Assignment_details'}">details</a> </td>
+                <td>{{ass.name}}</td>
+                <td>{{ass.category}}</td>
+                <td>{{ass.due_date}}</td>
+                <td><a href="{ url 'Assignment_details'}">Details</a> </td>
             </tr>
+            {%endfor%}
         </tbody>
     </table>
 </main>
