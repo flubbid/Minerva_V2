@@ -1,20 +1,18 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <title>Minerva</title>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-light" style="background-color: #ffe680">
+        <nav class="navbar">
             <h1 id="Minerva-Logo" class="navbar-brand" href="home/" >Minerva</h1>
             {% if user.is_authenticated %}
             <li><a href="#">Add a Student</a></li>
@@ -34,7 +32,7 @@
          <!-- Footer needs to be adjusted, so it can accomodate content -->
     </body>
     <footer>
-        <nav class="navbar navbar-light" style="background-color: #ffe680">
+        <nav class="navbar d-flex content-center flex-wrap">
             <a href="">Products</a>
             <a href="">Privacy Statement</a>
             <a href="">Support</a>

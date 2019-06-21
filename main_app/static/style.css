@@ -1,225 +1,131 @@
-body {
-    font-family: Open-sans, sans serif;
-  }
-  
-  div {
-    height: 500px;
-    padding-top: 30px;
-    padding-left: 40px;
-    margin: 40px, 0px 40px, 0px;
-  }
-  
-  .container {
-    align-items: center;
-    font-size: 30px;
-  }
-  
-  .container > div {
-    border: 3px #1a0d00 solid;
-    height: 300px;
-    border-radius: 12px;
-    margin: 3px,3px,3px,3px;
-    text-align: center;
-  }
-  
-  .container > h3 {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .login{
+
+
+/* body.dark{
+  background-color:linear-gradient(340deg, rgba(24,5,43,1) 0%, rgba(27,1,12,1) 45%, rgba(4,8,41,1) 100%);
+  color:white;
+} */
+.navbar{
+   background-image: linear-gradient(340deg, rgba(212,150,30,1) 0%, rgba(233,198,18,1) 45%, rgba(246,189,87,1) 100%);
+   width: 100%;
+}
+
+footer {
+  display: flex;
+  height: 500px;
+  font-size: 30px;
+    
+}
+div {
+  height: 500px;
+  padding-top: 30px;
+  padding-left: 40px;
+  margin: 40px, 0px 40px, 0px;
+}
+
+.container {
+  align-items: center;
+  font-size: 30px;
+}
+
+.container > div {
+  border: 3px #1a0d00 solid;
+  height: 300px;
+  border-radius: 12px;
+  margin: 3px, 3px, 3px, 3px;
+  text-align: center;
+}
+
+.container > h3 {
+  padding: 20px;
+  text-align: center;
+}
+#login-box{
+  padding:0px 100px;
+}
+#login-box > h1, h3{
+ text-align: center;
+}
+.login {
   box-sizing: border-box;
-  width:100%;
+  width: 100%;
   max-width: 330px;
-  height:300px;
-  padding:15px;
+  height: 300px;
+  padding: 15px;
   margin: 0 auto;
-  }
-  .form-control{
-  position:relative;
+}
+.form-control {
+  position: relative;
   height: auto;
   padding: 10px;
   max-width: 150%;
   @include box-sizing(border-box);
-  
-  }
-  #Minerva-Logo {
-    font-family: "Josefin Sans", sans-serif;
-    color: #1a0d00, black;
-    font-size: 10vh;
-   padding: 10px;
-  }
-  .btn{
-   display:block;
-    width: 10%;
-    height: 5vh;
-    margin:10px 0px 0px 0px;
-  }
-  
-  .sr-only{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-  .wrapper{
-  margin-top: 10px;
-  }
-  form-signin-heading{
-  display:flex;
-  height: 10px;
+}
+#Minerva-Logo {
+  font-family: "Josefin Sans", sans-serif;
+  color: #1a0d00, black;
+  font-size: 10vh;
   padding: 10px;
-  }
-  form{
-  height:300px;
+}
+.btn {
+  display: block;
+  width: 10%;
+  height: 5vh;
+  margin: 10px 0px 0px 0px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.wrapper {
+  margin-top: 10px;
+}
+form-signin-heading {
+  display: flex;
+  hight: 10px;
+  padding: 10px;
+}
+form {
+  height: 300px;
   width: 450px;
   padding: 30px;
   margin: 20px;
-  border: solid 3px black; 
+  border: solid 3px black;
   border-radius: 40px;
-  }
-  
-  .Student-nav{
-    height: 80px;
-    max-width:100%;
-    flex: left;
-  }
-  .table{
-    height: 40vh;
-    width: 80px;
-    margin:30px 0px 30px 0px;
-    border-spacing: 0.5em;
-   
-  }
-  tr{
-    border: solid 1px black;
-    margin: 10px;
-    
-    border-radius: 30px;
-    height: 20px;
-  }
-  footer{
-  display:flex;
-  height:500px;
-  background-color:#ffe680;
-  font-size: 30px;
-  }
-  nav > a {
-    padding: 20px 50px;
-  }body {
-    font-family: Open-sans, sans serif;
-  }
-  
-  div {
-    height: 500px;
-    padding-top: 30px;
-    padding-left: 40px;
-    margin: 40px, 0px 40px, 0px;
-  }
-  
-  .container {
-    align-items: center;
-    font-size: 30px;
-  }
-  
-  .container > div {
-    border: 3px #1a0d00 solid;
-    height: 300px;
-    border-radius: 12px;
-    margin: 3px,3px,3px,3px;
-    text-align: center;
-  }
-  
-  .container > h3 {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .login{
-  box-sizing: border-box;
-  width:100%;
-  max-width: 330px;
-  height:300px;
-  padding:15px;
-  margin: 0 auto;
-  }
-  .form-control{
-  position:relative;
-  height: auto;
-  padding: 10px;
-  max-width: 150%;
-  @include box-sizing(border-box);
-  
-  }
-  #Minerva-Logo {
-    font-family: "Josefin Sans", sans-serif;
-    color: #1a0d00, black;
-    font-size: 10vh;
-   padding: 10px;
-  }
-  .btn{
-   display:block;
-    width: auto;
-    height: 5vh;
-    margin:10px 0px 0px 0px;
-  }
-  
-  .sr-only{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-  .wrapper{
-  margin-top: 10px;
-  }
-  form-signin-heading{
-  display:flex;
-  height: 10px;
-  padding: 10px;
-  }
-  form{
-  height:300px;
-  width: 450px;
-  padding: 30px;
-  margin: 20px;
-  border: solid 3px black; 
-  border-radius: 40px;
-  }
-  
-  .Student-nav{
-    height: 80px;
-    max-width:100%;
-    flex: left;
-  }
-  .table{
-    height: 40vh;
-    width: 80px;
-    margin:30px 0px 30px 0px;
-    border-spacing: 0.5em;
-   
-  }
-  tr{
-    border: solid 1px black;
-    margin: 10px;
-    
-    border-radius: 30px;
-    height: 20px;
-  }
-  footer{
-  display:flex;
-  height:500px;
-  background-color:#ffe680;
-  font-size: 30px;
-  }
-  nav > a {
-    padding: 20px 50px;
-  }
+}
+.card{
+  width: 80vw;
+  height: 20vw;
+  flex: left;
+}
+.Student-nav {
+  height: 80px;
+  max-width: 100%;
+  flex: left;
+}
+.table {
+  height: 40vh;
+  width: 80px;
+  margin: 30px 0px 30px 0px;
+  border-spacing: 0.5em;
+}
+tr {
+  border: solid 1px black;
+  margin: 10px;
+
+  border-radius: 30px;
+  height: 20px;
+}
+nav > a {
+  padding: 20px 50px;
+
+}
+nav > li{
+  font-family: Open-sans, sans serif;
+}
