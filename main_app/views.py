@@ -69,8 +69,9 @@ def login_view(request):
     return render(request, 'registration/login.html', context)
 
 
-def logout(request):
-    return redirect(request, 'home.html')
+def logout_view(request):
+    logout(request)
+    return redirect('home')
 
 
 @login_required
