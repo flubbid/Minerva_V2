@@ -16,10 +16,22 @@ class Student(models.Model):
 
 
 class Assignment(models.Model):
+    CATEGORY = (
+        ('NONE', 'None'),
+        ('ENG', 'English'),
+        ('MATH', 'Mathematics'),
+        ('LANG', 'Language'),
+        ('HIST', 'History'),
+        ('SCI', 'Science')
+    )
     name = models.CharField(max_length=100)
-    category = models.CharField(max_length=100)
+    category = models.CharField(
+        max_length=100,
+        choices=CATEGORY,
+        default=CATEGORY[0][0]
+        )
     description = models.TextField(max_length=250)
-    due_date = models.DateField()
+    due_date = models.DateField('due date')
     students = models.ManyToManyField(Student)
 
     def __str__(self):
@@ -27,6 +39,10 @@ class Assignment(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'dog_id': self.id})
+
+    class Meta:
+        ordering = ['-due_date']
+
 
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)

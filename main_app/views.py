@@ -20,7 +20,7 @@ def signup(request):
             error_message = 'You put the incorrect credentials TRY AGAIN!'
             form = UserCreationForm()
             context = {'form': form, 'error_message': error_message}
-        return render(request, 'registration/signup.html', context)
+            return render(request, 'registration/signup.html', context)
 
 
 class AssCreate(LoginRequiredMixin, CreateView):
@@ -41,7 +41,6 @@ class AssDelete(DeleteView):
     model = Assignment
 
 
-
 def home(request):
     return render(request, 'home.html')
 
@@ -56,8 +55,7 @@ def logout(request):
 
 def ass_index(request):
     assignments = Assignment.objects.all(user=request.user)
-    return render(request, 'assignment/index.html', {'assignments': assignments})
-
+    return render (request, 'assignment/index.html', {'assignments': assignments})
 
 
 def ass_detail(request, ass_id):
