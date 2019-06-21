@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+
+from .forms import LoginForm
 from .models import Teacher, Student, Assignment
 # Create your views here.
 
@@ -45,7 +47,7 @@ def home(request):
     return render(request, 'home.html')
 
 
-def login(request):
+def login_view(request):
     error_message = ''
     if request.method == 'POST':
         next = request.POST.get('next') or None
@@ -64,7 +66,7 @@ def login(request):
                 error_message = 'Sorry, your username or password was invalid'
     form = LoginForm()
     context = {'form': form, 'error_message': error_message}
-    return render(request, 'Registration/login_view.html', context)
+    return render(request, 'registration/login.html', context)
 
 
 def logout(request):
