@@ -20,9 +20,9 @@ def signup(request):
             return redirect('index')
         else:
             error_message = 'You put the incorrect credentials TRY AGAIN!'
-        form = UserCreationForm()
-        context = {'form': form, 'error_message': error_message}
-        return render(request, 'registration/signup.html', context)
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
 
 
 class AssCreate(LoginRequiredMixin, CreateView):
