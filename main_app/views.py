@@ -18,9 +18,9 @@ def signup(request):
             return redirect('index')
         else:
             error_message = 'You put the incorrect credentials TRY AGAIN!'
-            form = UserCreationForm()
-            context = {'form': form, 'error_message': error_message}
-            return render(request, 'registration/signup.html', context)
+        form = UserCreationForm()
+        context = {'form': form, 'error_message': error_message}
+        return render(request, 'registration/signup.html', context)
 
 
 class AssCreate(LoginRequiredMixin, CreateView):
@@ -72,3 +72,6 @@ def assoc_student(request, assignment_id, student_id):
 def unassoc_student(request, assignment_id, student_id):
     Assignment.objects.get(id=assignment_id).students.remove(student_id)
     return redirect('detail', student_id=student_id)
+
+def StudentCreate(request):
+    return render(request, 'home.html')
