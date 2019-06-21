@@ -8,7 +8,7 @@
               <h3 style="margin:30px">Please Login</h3>
                 <div class="d-flex flex-column" style="margin:20px">
                  {% csrf_token %}
-                 {% login_view %}
+                 {% url 'login' %}
                 </div>
             </div>
           </div>
