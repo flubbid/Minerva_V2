@@ -17,7 +17,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')
+            return redirect('ass_index')
         else:
             error_message = 'You put the incorrect credentials TRY AGAIN!'
     form = UserCreationForm()
@@ -73,9 +73,10 @@ def logout(request):
     return redirect(request, 'home.html')
 
 
+@login_required
 def ass_index(request):
-    assignments = Assignment.objects.all(user=request.user)
-    return render (request, 'assignment/index.html', {'assignments': assignments})
+    assignments = Assignment.objects.filter(user = request.user)
+    return render (request, 'Assignment/index.html', {'assignments': assignments})
 
 
 def ass_detail(request, ass_id):
