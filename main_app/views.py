@@ -28,7 +28,7 @@ def signup(request):
 
 class AssCreate(LoginRequiredMixin, CreateView):
     model = Assignment
-    fields = ['name', 'description', 'due_date']
+    fields = ['name', 'category',  'description', 'due_date']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
