@@ -35,13 +35,14 @@ class AssCreate(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class AssUpdate(UpdateView):
+class AssUpdate(LoginRequiredMixin, UpdateView):
     model = Assignment
-    fields = ['title', 'description', 'due_date']
+    fields = ['name', 'description', 'due_date']
 
 
-class AssDelete(DeleteView):
+class AssDelete(LoginRequiredMixin, DeleteView):
     model = Assignment
+    success_url = '/Assignments/'
 
 
 def home(request):

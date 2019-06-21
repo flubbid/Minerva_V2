@@ -9,5 +9,9 @@
     <p>Description: {{assignments.description}}</p> 
       
 </div>
+<div class="container">
+    <a href="{% url 'ass_update' assignments.id %}">Edit</a>
+    <a href="{% url 'ass_delete' assignments.id %}">Delete</a>
+</div>
 
 {% endblock %}
