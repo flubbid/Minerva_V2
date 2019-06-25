@@ -82,8 +82,8 @@ def ass_index(request):
     return render(request, 'Assignments/index.html', {'assignments': assignments})
 
 @login_required
-def ass_detail(request, dog_id):
-    assignments = Assignment.objects.get(id=dog_id)
+def ass_detail(request, assignment_id):
+    assignments = Assignment.objects.get(id=assignment_id)
     return render(request, 'Assignments/ass_details.html', {'assignments':assignments})
 
 
